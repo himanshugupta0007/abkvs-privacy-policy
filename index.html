@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy – Akhil Bhartiye Kasaudhan Vaishya Mahasabha App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --saffron:    #D4540A;
+      --deep-red:   #8B1A1A;
+      --gold:       #C9951A;
+      --cream:      #FDF8F0;
+      --parchment:  #F5EDD8;
+      --ink:        #1C1209;
+      --muted:      #5C4A2A;
+      --border:     #E2CFA0;
+      --white:      #FFFFFF;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.75;
+      font-size: 15px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, var(--deep-red) 0%, #5A0E0E 100%);
+      color: var(--white);
+      padding: 48px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: "॥ श्री गणेशाय नमः ॥";
+      display: block;
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+    header .app-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 5vw, 32px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    header .subtitle {
+      font-size: 13px;
+      color: var(--gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    header .divider {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 20px auto;
+      border-radius: 2px;
+    }
+    header .tagline {
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── Meta bar ── */
+    .meta-bar {
+      background: var(--parchment);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 20px;
+      margin: 32px 0 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 32px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .meta-bar span strong { color: var(--ink); }
+
+    /* ── Section ── */
+    section {
+      margin-bottom: 38px;
+    }
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--deep-red);
+      border-left: 4px solid var(--saffron);
+      padding-left: 14px;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    section p {
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+
+    /* ── Data table ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 16px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    }
+    .data-table thead {
+      background: var(--deep-red);
+      color: var(--white);
+    }
+    .data-table thead th {
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .data-table tbody tr:nth-child(even) { background: var(--parchment); }
+    .data-table tbody tr:nth-child(odd)  { background: var(--white); }
+    .data-table tbody td {
+      padding: 11px 16px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+      color: var(--ink);
+    }
+    .data-table tbody td:first-child { font-weight: 500; }
+
+    /* ── List ── */
+    ul.policy-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    ul.policy-list li {
+      padding: 5px 0 5px 22px;
+      position: relative;
+      color: var(--ink);
+    }
+    ul.policy-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--saffron);
+      font-size: 12px;
+      top: 7px;
+    }
+
+    /* ── Highlight box ── */
+    .highlight-box {
+      background: #FFF8EC;
+      border: 1px solid var(--gold);
+      border-left: 4px solid var(--gold);
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .highlight-box strong { color: var(--deep-red); }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: linear-gradient(135deg, #5A0E0E 0%, var(--deep-red) 100%);
+      color: var(--white);
+      border-radius: 10px;
+      padding: 28px 28px 24px;
+      margin-top: 12px;
+    }
+    .contact-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      margin-bottom: 14px;
+      color: var(--gold);
+    }
+    .contact-card p { color: rgba(255,255,255,0.85); margin-bottom: 6px; font-size: 14px; }
+    .contact-card a { color: var(--gold); text-decoration: none; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--parchment);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    footer strong { color: var(--deep-red); }
+
+    @media (max-width: 540px) {
+      .data-table { font-size: 13px; }
+      .data-table thead th, .data-table tbody td { padding: 9px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="app-name">Akhil Bhartiye Kasaudhan Vaishya Mahasabha<br>National Census &amp; Matrimonial App</div>
+  <div class="subtitle">Privacy Policy</div>
+  <div class="divider"></div>
+  <div class="tagline">We are committed to protecting your personal information and the privacy of every family in our community.</div>
+</header>
+
+<div class="container">
+
+  <div class="meta-bar">
+    <span><strong>Effective Date:</strong> 1 July 2025</span>
+    <span><strong>Last Updated:</strong> 29 June 2025</span>
+    <span><strong>Applies To:</strong> Android App (Google Play Store)</span>
+  </div>
+
+  <!-- 1 -->
+  <section>
+    <h2>1. About This Policy</h2>
+    <p>This Privacy Policy explains how the <strong>Akhil Bhartiye Kasaudhan Vaishya Mahasabha &amp; Matrimonial App</strong> ("the App", "we", "us") collects, uses, stores, and protects information you provide when you register your family or create a matrimonial profile.</p>
+    <p>By using the App, you agree to the practices described in this policy. If you do not agree, please do not use the App.</p>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <h2>2. Information We Collect</h2>
+    <p>We collect information in two categories — information you provide directly, and technical information collected automatically.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Data Collected</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Personal Identity</td>
+          <td>Full name, date of birth, gender, photograph</td>
+          <td>Community census &amp; matrimonial profile</td>
+        </tr>
+        <tr>
+          <td>Family Information</td>
+          <td>Family members' names, relationships, marital status</td>
+          <td>National census data compilation</td>
+        </tr>
+        <tr>
+          <td>Contact Details</td>
+          <td>Mobile number, email address, residential address, city, state, PIN code</td>
+          <td>Account registration, communication</td>
+        </tr>
+        <tr>
+          <td>Educational &amp; Occupational</td>
+          <td>Education qualifications, occupation, income range</td>
+          <td>Community development planning, matrimonial matching</td>
+        </tr>
+        <tr>
+          <td>Social &amp; Political</td>
+          <td>Community roles, affiliations (optional)</td>
+          <td>Census analysis for community programs</td>
+        </tr>
+        <tr>
+          <td>Matrimonial Preferences</td>
+          <td>Preferred age range, education, city, horoscope details (optional)</td>
+          <td>Match-finding within Kasaudhan community</td>
+        </tr>
+        <tr>
+          <td>Device &amp; Technical</td>
+          <td>Device model, OS version, app version, crash logs</td>
+          <td>App performance &amp; bug fixing</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box">
+      <strong>Note:</strong> Sensitive fields such as income, political affiliation, and horoscope details are <strong>optional</strong>. You are never required to submit them to use the App.
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <h2>3. How We Use Your Information</h2>
+    <ul class="policy-list">
+      <li>To maintain an accurate digital census of the Kasaudhan Vaishya Samaj community across India.</li>
+      <li>To help community organizations plan development programs based on social, educational, and economic data.</li>
+      <li>To display your matrimonial profile to other verified members of the community for the purpose of finding a suitable match.</li>
+      <li>To send you important App notifications, updates, or community announcements.</li>
+      <li>To verify your identity and prevent duplicate or fraudulent registrations.</li>
+      <li>To analyse aggregated, anonymised census data for community research (no individual is identified in such reports).</li>
+      <li>To improve App performance, fix errors, and enhance user experience.</li>
+    </ul>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <h2>4. Who Can See Your Information</h2>
+    <p>We control who can access your data carefully:</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Audience</th>
+          <th>What They Can See</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Verified App Members (Census)</td>
+          <td>Basic community directory info only (name, city, family count)</td>
+        </tr>
+        <tr>
+          <td>Verified App Members (Matrimonial)</td>
+          <td>Your matrimonial profile — only if you activate this feature</td>
+        </tr>
+        <tr>
+          <td>Community Administrators</td>
+          <td>Full census data for program planning (under strict confidentiality)</td>
+        </tr>
+        <tr>
+          <td>Third Parties / Public</td>
+          <td>None — we do not sell, rent, or share personal data with advertisers or external parties</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="highlight-box">
+      <strong>Matrimonial profiles</strong> are only visible to other registered and verified members of the Kasaudhan community. Your contact details (mobile/email) are never shown publicly — interested families must connect through the App's in-app messaging.
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <h2>5. Data Storage and Security</h2>
+    <ul class="policy-list">
+      <li>All data is stored on secured servers with access controls and encryption.</li>
+      <li>We use industry-standard security measures including HTTPS data transmission.</li>
+      <li>Only authorised administrators have access to the backend database.</li>
+      <li>We regularly review our security practices to protect community data.</li>
+      <li>In the unlikely event of a data breach that affects your privacy, we will notify affected users promptly.</li>
+    </ul>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <h2>6. Data Retention</h2>
+    <p>We retain your information for as long as your account is active or as needed to provide the App's services. If you request deletion of your account:</p>
+    <ul class="policy-list">
+      <li>Your matrimonial profile will be removed from public view immediately.</li>
+      <li>Census data contributed by you may be retained in anonymised, aggregated form for historical community records.</li>
+      <li>Personal identifiable data will be permanently deleted within <strong>30 days</strong> of a valid deletion request.</li>
+    </ul>
+  </section>
+
+  <!-- 7 -->
+  <section>
+    <h2>7. Children's Privacy</h2>
+    <p>This App is intended for use by adults (18 years and above). Minor children may appear as <em>family members</em> in a parent's census registration, but minors cannot register independently or create a matrimonial profile.</p>
+    <p>We do not knowingly collect personal information directly from anyone under the age of 18.</p>
+  </section>
+
+  <!-- 8 -->
+  <section>
+    <h2>8. Your Rights</h2>
+    <p>As a user, you have the following rights over your data:</p>
+    <ul class="policy-list">
+      <li><strong>Access:</strong> Request a copy of the personal information we hold about you.</li>
+      <li><strong>Correction:</strong> Update or correct any inaccurate details in your profile at any time through the App.</li>
+      <li><strong>Deletion:</strong> Request permanent deletion of your account and personal data.</li>
+      <li><strong>Withdraw Consent:</strong> Deactivate your matrimonial profile at any time without deleting your census registration.</li>
+      <li><strong>Grievance:</strong> Raise a complaint if you believe your data has been misused.</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at the email address below.</p>
+  </section>
+
+  <!-- 9 -->
+  <section>
+    <h2>9. Third-Party Services</h2>
+    <p>The App may use the following limited third-party services for technical functions:</p>
+    <ul class="policy-list">
+      <li><strong>Firebase (Google):</strong> Push notifications and crash analytics</li>
+      <li><strong>Google Play Services:</strong> App distribution and updates</li>
+    </ul>
+    <p>These services have their own privacy policies. We do not share your census or matrimonial data with any of these third parties beyond what is technically necessary for the service to function.</p>
+  </section>
+
+  <!-- 10 -->
+  <section>
+    <h2>10. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time as the App grows. When we make changes, we will update the "Last Updated" date at the top of this page and notify users through the App.</p>
+    <p>Your continued use of the App after changes are posted means you accept the updated policy.</p>
+  </section>
+
+  <!-- 11 -->
+  <section>
+    <h2>11. Contact Us</h2>
+    <p>For any privacy-related questions, data requests, or grievances, please contact us:</p>
+    <div class="contact-card">
+      <h3>Kasaudhan Vaishya Samaj — Privacy Contact</h3>
+      <p>📧 Email: <a href="mailto:privacy@kasaudhansamaj.org">abkvmkasaudhan@gmail.com</a></p>
+      <p style="margin-top:14px; font-size:13px; color:rgba(255,255,255,0.6);">We will respond to all privacy requests within 7 working days.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2025 <strong>Akhil Bhartiye Kasaudhan Vaishya Mahasabha</strong> — All rights reserved.</p>
+  <p style="margin-top:6px;">This privacy policy is valid for the Android app published on Google Play Store.</p>
+</footer>
+
+</body>
+</html>
