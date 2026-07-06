@@ -28,7 +28,8 @@
       font-size: 15px;
     }
 
-    /* ── Header ── */
+    .hi { font-family: 'Tiro Devanagari Hindi', serif; }
+
     header {
       background: linear-gradient(135deg, var(--deep-red) 0%, #5A0E0E 100%);
       color: var(--white);
@@ -55,11 +56,23 @@
       line-height: 1.25;
       margin-bottom: 8px;
     }
+    header .app-name-hi {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: clamp(17px, 3.6vw, 22px);
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 10px;
+    }
     header .subtitle {
       font-size: 13px;
       color: var(--gold);
       letter-spacing: 1px;
       text-transform: uppercase;
+    }
+    header .subtitle-hi {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: 13px;
+      color: var(--gold);
+      margin-top: 4px;
     }
     header .divider {
       width: 60px;
@@ -74,15 +87,20 @@
       max-width: 480px;
       margin: 0 auto;
     }
+    header .tagline-hi {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.65);
+      max-width: 480px;
+      margin: 8px auto 0;
+    }
 
-    /* ── Layout ── */
     .container {
       max-width: 780px;
       margin: 0 auto;
       padding: 0 20px 60px;
     }
 
-    /* ── Meta bar ── */
     .meta-bar {
       background: var(--parchment);
       border: 1px solid var(--border);
@@ -97,9 +115,46 @@
     }
     .meta-bar span strong { color: var(--ink); }
 
-    /* ── Section ── */
+    .toc {
+      background: var(--parchment);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+    }
+    .toc h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--deep-red);
+      margin-bottom: 4px;
+    }
+    .toc h2 .hi { display: block; font-size: 13px; color: var(--muted); font-weight: 400; margin-top: 2px; }
+    .toc ol {
+      list-style: none;
+      counter-reset: toc-counter;
+      padding: 0;
+      margin-top: 12px;
+    }
+    .toc ol li {
+      counter-increment: toc-counter;
+      font-size: 13.5px;
+      padding: 4px 0;
+    }
+    .toc ol li::before {
+      content: counter(toc-counter) ". ";
+      color: var(--saffron);
+      font-weight: 600;
+    }
+    .toc ol li a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .toc ol li a:hover { color: var(--deep-red); text-decoration: underline; }
+    .toc ol li .hi { color: var(--muted); font-size: 12.5px; }
+
     section {
-      margin-bottom: 38px;
+      margin-bottom: 42px;
+      scroll-margin-top: 20px;
     }
     section h2 {
       font-family: 'Playfair Display', serif;
@@ -108,15 +163,51 @@
       color: var(--deep-red);
       border-left: 4px solid var(--saffron);
       padding-left: 14px;
-      margin-bottom: 14px;
+      margin-bottom: 4px;
       line-height: 1.3;
+    }
+    section h2 .hi {
+      display: block;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+    section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--deep-red);
+      margin: 18px 0 8px;
     }
     section p {
       margin-bottom: 12px;
       color: var(--ink);
     }
+    section p.hi {
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+    .lang-block {
+      padding: 14px 0 14px 18px;
+      border-left: 2px solid var(--border);
+      margin-bottom: 4px;
+    }
+    .lang-block + .lang-block {
+      margin-top: 4px;
+      border-left-color: var(--gold);
+    }
+    .lang-tag {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: 8px;
+    }
+    .lang-tag.hi-tag { color: var(--gold); }
 
-    /* ── List ── */
     ul.policy-list {
       list-style: none;
       padding: 0;
@@ -135,8 +226,8 @@
       font-size: 12px;
       top: 7px;
     }
+    ul.policy-list.hi li { color: var(--muted); font-size: 14.5px; }
 
-    /* ── Numbered list ── */
     ol.policy-ol {
       padding-left: 0;
       list-style: none;
@@ -159,8 +250,8 @@
       top: 8px;
       width: 26px;
     }
+    ol.policy-ol.hi li { color: var(--muted); font-size: 14.5px; }
 
-    /* ── Highlight box ── */
     .highlight-box {
       background: #FFF8EC;
       border: 1px solid var(--gold);
@@ -172,8 +263,8 @@
       color: var(--muted);
     }
     .highlight-box strong { color: var(--deep-red); }
+    .highlight-box p.hi { margin-top: 8px; margin-bottom: 0; }
 
-    /* ── Warning box ── */
     .warning-box {
       background: #FFF2F2;
       border: 1px solid #E8AAAA;
@@ -185,8 +276,8 @@
       color: #5A1A1A;
     }
     .warning-box strong { color: var(--deep-red); }
+    .warning-box p.hi { margin-top: 8px; margin-bottom: 0; color: #7A3A3A; }
 
-    /* ── Table ── */
     .data-table {
       width: 100%;
       border-collapse: collapse;
@@ -205,6 +296,7 @@
       text-align: left;
       font-weight: 600;
     }
+    .data-table thead th .hi { display: block; font-weight: 400; font-size: 11.5px; color: rgba(255,255,255,0.75); margin-top: 2px; }
     .data-table tbody tr:nth-child(even) { background: var(--parchment); }
     .data-table tbody tr:nth-child(odd)  { background: var(--white); }
     .data-table tbody td {
@@ -213,8 +305,8 @@
       border-bottom: 1px solid var(--border);
     }
     .data-table tbody td:first-child { font-weight: 500; }
+    .data-table tbody td .hi { display: block; color: var(--muted); font-size: 12.5px; margin-top: 5px; }
 
-    /* ── Contact card ── */
     .contact-card {
       background: linear-gradient(135deg, #5A0E0E 0%, var(--deep-red) 100%);
       color: var(--white);
@@ -225,14 +317,14 @@
     .contact-card h3 {
       font-family: 'Playfair Display', serif;
       font-size: 17px;
-      margin-bottom: 14px;
+      margin-bottom: 4px;
       color: var(--gold);
     }
+    .contact-card h3 .hi { display: block; font-size: 13.5px; color: rgba(255,255,255,0.7); font-weight: 400; margin-top: 2px; }
     .contact-card p { color: rgba(255,255,255,0.85); margin-bottom: 6px; font-size: 14px; }
     .contact-card a { color: var(--gold); text-decoration: none; }
     .contact-card a:hover { text-decoration: underline; }
 
-    /* ── Footer ── */
     footer {
       background: var(--parchment);
       border-top: 1px solid var(--border);
@@ -242,6 +334,7 @@
       color: var(--muted);
     }
     footer strong { color: var(--deep-red); }
+    footer p.hi { margin-top: 4px; font-size: 11.5px; }
 
     @media (max-width: 540px) {
       .data-table { font-size: 13px; }
@@ -253,218 +346,447 @@
 
 <header>
   <div class="app-name">Akhil Bhartiye Kasaudhan Vaishya Mahasabha App</div>
+  <div class="app-name-hi hi">अखिल भारतीय कासौधन वैश्य महासभा ऐप</div>
   <div class="subtitle">Terms &amp; Conditions</div>
+  <div class="subtitle-hi hi">नियम एवं शर्तें</div>
   <div class="divider"></div>
   <div class="tagline">Please read these terms carefully before using the App. By registering, you agree to be bound by them.</div>
+  <div class="tagline-hi hi">कृपया ऐप का उपयोग करने से पहले इन नियमों को ध्यानपूर्वक पढ़ें। पंजीकरण करके, आप इनसे बाध्य होने के लिए सहमत होते हैं।</div>
 </header>
 
 <div class="container">
 
   <div class="meta-bar">
     <span><strong>Effective Date:</strong> 1 July 2025</span>
-    <span><strong>Last Updated:</strong> 29 June 2025</span>
+    <span><strong>Last Updated:</strong> 6 July 2026</span>
     <span><strong>Applies To:</strong> Android App (Google Play Store)</span>
     <span><strong>Governing Law:</strong> Laws of India</span>
   </div>
 
-  <!-- 1 -->
-  <section>
-    <h2>1. Acceptance of Terms</h2>
-    <p>By downloading, installing, or using the <strong>Akhil Bhartiye Kasaudhan Vaishya Mahasabha &amp; Matrimonial App</strong> ("the App"), you confirm that you have read, understood, and agree to these Terms &amp; Conditions ("Terms").</p>
-    <p>If you do not agree with any part of these Terms, you must not use the App. These Terms apply to all users, including members who register for the census and those who use the matrimonial feature.</p>
-    <div class="highlight-box">
-      These Terms should be read alongside our <strong>Privacy Policy</strong>, which explains how your personal data is collected and handled.
-    </div>
-  </section>
-
-  <!-- 2 -->
-  <section>
-    <h2>2. About the App</h2>
-    <p>The App is a community initiative by and for the Akhil Bhartiye Kasaudhan Vaishya Mahasabha. It serves two core purposes:</p>
-    <table class="data-table">
-      <thead>
-        <tr><th>Feature</th><th>Purpose</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>National Census</td>
-          <td>Digital registration of Kasaudhan families across India, capturing social, educational, economic, and demographic data for community development planning.</td>
-        </tr>
-        <tr>
-          <td>Matrimonial Platform</td>
-          <td>A trusted, community-verified platform for families to create profiles and find suitable matches for their children within the Kasaudhan community.</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>The App is operated as a non-commercial community service. It is not a commercial matrimonial agency or dating platform.</p>
-  </section>
-
-  <!-- 3 -->
-  <section>
-    <h2>3. Eligibility</h2>
-    <p>To use the App, you must meet the following conditions:</p>
-    <ul class="policy-list">
-      <li>You must be <strong>18 years of age or older</strong> to register independently.</li>
-      <li>You must be a member of, or related to a member of, the <strong>Akhil Bhartiye Kasaudhan Vaishya Mahasabha</strong> community.</li>
-      <li>You must provide accurate, complete, and truthful information during registration.</li>
-      <li>You must have the legal authority to register on behalf of your family members listed in the census.</li>
-      <li>You must not have been previously suspended or removed from the App for violating these Terms.</li>
-    </ul>
-    <div class="warning-box">
-      <strong>Important:</strong> Registering with false identity, fake family details, or impersonating another person is a serious violation and may result in permanent removal from the App.
-    </div>
-  </section>
-
-  <!-- 4 -->
-  <section>
-    <h2>4. User Registration &amp; Account</h2>
-    <ul class="policy-list">
-      <li>Each family or individual may create only <strong>one account</strong>. Duplicate accounts are not permitted.</li>
-      <li>You are responsible for keeping your login credentials (mobile number / OTP / password) confidential.</li>
-      <li>You must notify us immediately if you suspect unauthorised access to your account.</li>
-      <li>All activities that occur under your account are your responsibility.</li>
-      <li>We reserve the right to suspend or delete accounts that are inactive for extended periods or found to contain false information.</li>
-    </ul>
-  </section>
-
-  <!-- 5 -->
-  <section>
-    <h2>5. Census Registration Rules</h2>
-    <p>When registering your family for the community census, you agree to:</p>
-    <ol class="policy-ol">
-      <li>Provide accurate and up-to-date information for yourself and all family members you register.</li>
-      <li>Update your details promptly if any information changes (e.g., address, marital status, contact number).</li>
-      <li>Not register individuals without their knowledge and consent (for adult family members).</li>
-      <li>Not misrepresent your community affiliation or family composition.</li>
-      <li>Understand that census data will be used in aggregated, anonymised form by community organisations for development planning — your individual data will not be published publicly.</li>
+  <div class="toc">
+    <h2>Contents <span class="hi">विषय-सूची</span></h2>
+    <ol>
+      <li><a href="#s1">Acceptance of Terms <span class="hi">/ शर्तों की स्वीकृति</span></a></li>
+      <li><a href="#s2">About the App <span class="hi">/ ऐप के बारे में</span></a></li>
+      <li><a href="#s3">Eligibility <span class="hi">/ पात्रता</span></a></li>
+      <li><a href="#s4">User Registration &amp; Account <span class="hi">/ उपयोगकर्ता पंजीकरण एवं खाता</span></a></li>
+      <li><a href="#s5">Census Registration Rules <span class="hi">/ जनगणना पंजीकरण नियम</span></a></li>
+      <li><a href="#s6">Matrimonial Platform Rules <span class="hi">/ वैवाहिक मंच नियम</span></a></li>
+      <li><a href="#s7">Prohibited Conduct <span class="hi">/ निषिद्ध आचरण</span></a></li>
+      <li><a href="#child-safety">Child Safety Standards <span class="hi">/ बाल सुरक्षा मानक</span></a></li>
+      <li><a href="#s9">Content You Submit <span class="hi">/ आपके द्वारा प्रस्तुत सामग्री</span></a></li>
+      <li><a href="#s10">Intellectual Property <span class="hi">/ बौद्धिक संपदा</span></a></li>
+      <li><a href="#s11">Disclaimer of Warranties <span class="hi">/ वारंटी अस्वीकरण</span></a></li>
+      <li><a href="#s12">Limitation of Liability <span class="hi">/ दायित्व की सीमा</span></a></li>
+      <li><a href="#s13">Account Suspension &amp; Termination <span class="hi">/ खाता निलंबन एवं समाप्ति</span></a></li>
+      <li><a href="#s14">Changes to These Terms <span class="hi">/ इन शर्तों में परिवर्तन</span></a></li>
+      <li><a href="#s15">Governing Law &amp; Disputes <span class="hi">/ शासी कानून एवं विवाद</span></a></li>
+      <li><a href="#s16">Contact Us <span class="hi">/ हमसे संपर्क करें</span></a></li>
     </ol>
-  </section>
+  </div>
 
-  <!-- 6 -->
-  <section>
-    <h2>6. Matrimonial Platform Rules</h2>
-    <p>The matrimonial section of the App is a community-moderated platform for families to find matches within the Akhil Bhartiye Kasaudhan Vaishya Mahasabha. By using this feature, you agree to:</p>
-    <ul class="policy-list">
-      <li>Create profiles only for yourself or your immediate family members, with their full consent.</li>
-      <li>Use the platform solely for the purpose of finding a life partner within the Kasaudhan community — not for casual contact, friendship, or any other purpose.</li>
-      <li>Communicate with other families respectfully and in good faith at all times.</li>
-      <li>Not share another member's contact details, photographs, or profile information outside the App without their explicit permission.</li>
-      <li>Not upload photographs of any person other than the profile holder.</li>
-      <li>Not make any payment demands, financial requests, or engage in any commercial activity through the matrimonial feature.</li>
-      <li>Report any suspicious, fraudulent, or inappropriate profiles to the App administrators immediately.</li>
-    </ul>
-    <div class="highlight-box">
-      <strong>Disclaimer:</strong> The App facilitates introductions only. We do not verify all claims made in matrimonial profiles. Families are advised to independently verify information before proceeding with any alliance. The App and its administrators are not responsible for the outcome of any matrimonial connection made through the platform.
+  <section id="s1">
+    <h2>1. Acceptance of Terms <span class="hi">शर्तों की स्वीकृति</span></h2>
+    <div class="lang-block">
+      <span class="lang-tag">English</span>
+      <p>By downloading, installing, or using the <strong>Akhil Bhartiye Kasaudhan Vaishya Mahasabha &amp; Matrimonial App</strong> ("the App"), you confirm that you have read, understood, and agree to these Terms &amp; Conditions ("Terms").</p>
+      <p>If you do not agree with any part of these Terms, you must not use the App. These Terms apply to all users, including members who register for the census and those who use the matrimonial feature.</p>
+      <div class="highlight-box">
+        These Terms should be read alongside our <strong>Privacy Policy</strong>, which explains how your personal data is collected and handled.
+      </div>
+    </div>
+    <div class="lang-block hi">
+      <span class="lang-tag hi-tag">हिन्दी</span>
+      <p class="hi"><strong>अखिल भारतीय कासौधन वैश्य महासभा एवं वैवाहिक ऐप</strong> ("ऐप") को डाउनलोड, इंस्टॉल या उपयोग करके, आप पुष्टि करते हैं कि आपने इन नियमों एवं शर्तों ("शर्तें") को पढ़ा, समझा है और इनसे सहमत हैं।</p>
+      <p class="hi">यदि आप इन शर्तों के किसी भी भाग से सहमत नहीं हैं, तो आपको ऐप का उपयोग नहीं करना चाहिए। ये शर्तें सभी उपयोगकर्ताओं पर लागू होती हैं, जिनमें जनगणना हेतु पंजीकरण करने वाले सदस्य तथा वैवाहिक सुविधा का उपयोग करने वाले सदस्य शामिल हैं।</p>
+      <div class="highlight-box">
+        <p class="hi">इन शर्तों को हमारी <strong>गोपनीयता नीति</strong> के साथ पढ़ा जाना चाहिए, जो बताती है कि आपका व्यक्तिगत डेटा कैसे एकत्र और संभाला जाता है।</p>
+      </div>
     </div>
   </section>
 
-  <!-- 7 -->
-  <section>
-    <h2>7. Prohibited Conduct</h2>
-    <p>The following actions are strictly prohibited on the App:</p>
-    <ul class="policy-list">
-      <li>Posting false, misleading, or fabricated information in any section of the App.</li>
-      <li>Harassing, threatening, or abusing other community members in any form.</li>
-      <li>Using the App for any commercial purpose, solicitation, advertising, or business promotion.</li>
-      <li>Collecting or harvesting personal data of other users for any purpose outside the App.</li>
-      <li>Attempting to hack, disrupt, or reverse-engineer the App or its systems.</li>
-      <li>Uploading obscene, offensive, or inappropriate content including photographs.</li>
-      <li>Impersonating any other person, family, or community official.</li>
-      <li>Using the App in any way that violates applicable laws of India.</li>
-    </ul>
-    <div class="warning-box">
-      <strong>Violation of these rules</strong> may result in immediate account suspension, permanent ban from the App, and, in serious cases, reporting to appropriate legal authorities.
+  <section id="s2">
+    <h2>2. About the App <span class="hi">ऐप के बारे में</span></h2>
+    <div class="lang-block">
+      <span class="lang-tag">English</span>
+      <p>The App is a community initiative by and for the Akhil Bhartiye Kasaudhan Vaishya Mahasabha. It serves two core purposes:</p>
+      <table class="data-table">
+        <thead>
+          <tr><th>Feature<span class="hi">विशेषता</span></th><th>Purpose<span class="hi">उद्देश्य</span></th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>National Census<span class="hi">राष्ट्रीय जनगणना</span></td>
+            <td>Digital registration of Kasaudhan families across India, capturing social, educational, economic, and demographic data for community development planning.</td>
+          </tr>
+          <tr>
+            <td>Matrimonial Platform<span class="hi">वैवाहिक मंच</span></td>
+            <td>A trusted, community-verified platform for families to create profiles and find suitable matches for their children within the Kasaudhan community.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>The App is operated as a non-commercial community service. It is not a commercial matrimonial agency or dating platform.</p>
+    </div>
+    <div class="lang-block hi">
+      <span class="lang-tag hi-tag">हिन्दी</span>
+      <p class="hi">यह ऐप अखिल भारतीय कासौधन वैश्य महासभा द्वारा और उसके लिए एक सामुदायिक पहल है। यह दो मुख्य उद्देश्यों की पूर्ति करता है:</p>
+      <ul class="policy-list hi">
+        <li><strong>राष्ट्रीय जनगणना</strong> — सामुदायिक विकास योजना हेतु सामाजिक, शैक्षिक, आर्थिक एवं जनसांख्यिकीय आँकड़े एकत्र करते हुए, पूरे भारत में कासौधन परिवारों का डिजिटल पंजीकरण।</li>
+        <li><strong>वैवाहिक मंच</strong> — परिवारों के लिए प्रोफ़ाइल बनाने तथा कासौधन समुदाय के भीतर अपने बच्चों हेतु उपयुक्त वर-वधू खोजने का एक विश्वसनीय, समुदाय-सत्यापित मंच।</li>
+      </ul>
+      <p class="hi">यह ऐप एक गैर-व्यावसायिक सामुदायिक सेवा के रूप में संचालित है। यह कोई व्यावसायिक विवाह एजेंसी या डेटिंग प्लेटफ़ॉर्म नहीं है।</p>
     </div>
   </section>
 
-  <!-- 8 -->
-  <section>
-    <h2>8. Content You Submit</h2>
-    <p>By submitting any content to the App (profile information, photographs, messages), you confirm that:</p>
-    <ul class="policy-list">
-      <li>The content is accurate and belongs to you or you have the right to share it.</li>
-      <li>The content does not violate any third-party rights, including copyright or privacy rights.</li>
-      <li>You grant the App a limited, non-exclusive right to display your content to other verified members for the purposes stated in these Terms.</li>
-      <li>You can request removal of your content at any time by deleting your account or contacting us.</li>
-    </ul>
+  <section id="s3">
+    <h2>3. Eligibility <span class="hi">पात्रता</span></h2>
+    <div class="lang-block">
+      <span class="lang-tag">English</span>
+      <p>To use the App, you must meet the following conditions:</p>
+      <ul class="policy-list">
+        <li>You must be <strong>18 years of age or older</strong> to register independently.</li>
+        <li>You must be a member of, or related to a member of, the <strong>Akhil Bhartiye Kasaudhan Vaishya Mahasabha</strong> community.</li>
+        <li>You must provide accurate, complete, and truthful information during registration.</li>
+        <li>You must have the legal authority to register on behalf of your family members listed in the census.</li>
+        <li>You must not have been previously suspended or removed from the App for violating these Terms.</li>
+      </ul>
+      <div class="warning-box">
+        <strong>Important:</strong> Registering with false identity, fake family details, or impersonating another person is a serious violation and may result in permanent removal from the App.
+      </div>
+    </div>
+    <div class="lang-block hi">
+      <span class="lang-tag hi-tag">हिन्दी</span>
+      <p class="hi">ऐप का उपयोग करने के लिए, आपको निम्नलिखित शर्तों को पूरा करना होगा:</p>
+      <ul class="policy-list hi">
+        <li>स्वतंत्र रूप से पंजीकरण करने के लिए आपकी आयु <strong>18 वर्ष या उससे अधिक</strong> होनी चाहिए।</li>
+        <li>आप <strong>अखिल भारतीय कासौधन वैश्य महासभा</strong> समुदाय के सदस्य होने चाहिए, या किसी सदस्य से संबंधित होने चाहिए।</li>
+        <li>पंजीकरण के दौरान आपको सटीक, पूर्ण और सत्य जानकारी प्रदान करनी होगी।</li>
+        <li>जनगणना में सूचीबद्ध अपने परिवार के सदस्यों की ओर से पंजीकरण करने का आपके पास कानूनी अधिकार होना चाहिए।</li>
+        <li>आपको इन शर्तों के उल्लंघन के कारण पहले से ऐप से निलंबित या हटाया नहीं गया होना चाहिए।</li>
+      </ul>
+      <div class="warning-box">
+        <p class="hi"><strong>महत्वपूर्ण:</strong> झूठी पहचान, नकली पारिवारिक विवरण के साथ पंजीकरण करना, या किसी अन्य व्यक्ति का रूप धारण करना एक गंभीर उल्लंघन है और इसके परिणामस्वरूप ऐप से स्थायी रूप से हटाया जा सकता है।</p>
+      </div>
+    </div>
   </section>
 
-  <!-- 9 -->
-  <section>
-    <h2>9. Intellectual Property</h2>
-    <p>All content, design, branding, logos, and software of the App are the property of Akhil Bhartiye Kasaudhan Vaishya Mahasabha and its developers. You may not:</p>
-    <ul class="policy-list">
-      <li>Copy, reproduce, or distribute any part of the App without written permission.</li>
-      <li>Use the App's name, logo, or branding for any commercial or personal purpose outside the App.</li>
-      <li>Develop derivative products or services based on the App's data or functionality.</li>
-    </ul>
+  <section id="s4">
+    <h2>4. User Registration &amp; Account <span class="hi">उपयोगकर्ता पंजीकरण एवं खाता</span></h2>
+    <div class="lang-block">
+      <span class="lang-tag">English</span>
+      <ul class="policy-list">
+        <li>Each family or individual may create only <strong>one account</strong>. Duplicate accounts are not permitted.</li>
+        <li>You are responsible for keeping your login credentials (mobile number / OTP / password) confidential.</li>
+        <li>You must notify us immediately if you suspect unauthorised access to your account.</li>
+        <li>All activities that occur under your account are your responsibility.</li>
+        <li>We reserve the right to suspend or delete accounts that are inactive for extended periods or found to contain false information.</li>
+      </ul>
+    </div>
+    <div class="lang-block hi">
+      <span class="lang-tag hi-tag">हिन्दी</span>
+      <ul class="policy-list hi">
+        <li>प्रत्येक परिवार या व्यक्ति केवल <strong>एक खाता</strong> बना सकता है। डुप्लीकेट खातों की अनुमति नहीं है।</li>
+        <li>अपनी लॉगिन जानकारी (मोबाइल नंबर / OTP / पासवर्ड) को गोपनीय रखना आपकी ज़िम्मेदारी है।</li>
+        <li>यदि आपको अपने खाते में अनधिकृत पहुँच का संदेह हो, तो आपको हमें तुरंत सूचित करना होगा।</li>
+        <li>आपके खाते के अंतर्गत होने वाली सभी गतिविधियाँ आपकी ज़िम्मेदारी हैं।</li>
+        <li>हम उन खातों को निलंबित या हटाने का अधिकार सुरक्षित रखते हैं जो लंबे समय तक निष्क्रिय रहते हैं या जिनमें गलत जानकारी पाई जाती है।</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- 10 -->
-  <section>
-    <h2>10. Disclaimer of Warranties</h2>
-    <p>The App is provided <strong>"as is"</strong> and <strong>"as available"</strong> without any warranties of any kind, either express or implied. We do not guarantee:</p>
-    <ul class="policy-list">
-      <li>That the App will be available at all times without interruption or errors.</li>
-      <li>That all information submitted by users is accurate or verified.</li>
-      <li>That use of the matrimonial platform will result in a successful alliance.</li>
-      <li>That the App is free from bugs, viruses, or security vulnerabilities at all times.</li>
-    </ul>
-    <p>We will make reasonable efforts to maintain the App and correct issues promptly, but accept no liability for disruption beyond our control.</p>
+  <section id="s5">
+    <h2>5. Census Registration Rules <span class="hi">जनगणना पंजीकरण नियम</span></h2>
+    <div class="lang-block">
+      <span class="lang-tag">English</span>
+      <p>When registering your family for the community census, you agree to:</p>
+      <ol class="policy-ol">
+        <li>Provide accurate and up-to-date information for yourself and all family members you register.</li>
+        <li>Update your details promptly if any information changes (e.g., address, marital status, contact number).</li>
+        <li>Not register individuals without their knowledge and consent (for adult family members).</li>
+        <li>Not misrepresent your community affiliation or family composition.</li>
+        <li>Understand that census data will be used in aggregated, anonymised form by community organisations for development planning — your individual data will not be published publicly.</li>
+      </ol>
+    </div>
+    <div class="lang-block hi">
+      <span class="lang-tag hi-tag">हिन्दी</span>
+      <p class="hi">सामुदायिक जनगणना हेतु अपने परिवार का पंजीकरण करते समय, आप सहमत होते हैं कि आप:</p>
+      <ol class="policy-ol hi">
+        <li>अपने और अपने द्वारा पंजीकृत सभी परिवार के सदस्यों के लिए सटीक एवं अद्यतन जानकारी प्रदान करेंगे।</li>
+        <li>किसी भी जानकारी में परिवर्तन होने पर (जैसे पता, वैवाहिक स्थिति, संपर्क नंबर) तुरंत अपडेट करेंगे।</li>
+        <li>वयस्क परिवार सदस्यों की जानकारी या सहमति के बिना उन्हें पंजीकृत नहीं करेंगे।</li>
+        <li>अपने समुदाय की संबद्धता या पारिवारिक संरचना को गलत तरीके से प्रस्तुत नहीं करेंगे।</li>
+        <li>यह समझेंगे कि जनगणना डेटा का उपयोग सामुदायिक संगठनों द्वारा विकास योजना हेतु समग्र, गुमनाम रूप में किया जाएगा — आपका व्यक्तिगत डेटा सार्वजनिक रूप से प्रकाशित नहीं किया जाएगा।</li>
+      </ol>
+    </div>
   </section>
 
-  <!-- 11 -->
-  <section>
-    <h2>11. Limitation of Liability</h2>
-    <p>To the maximum extent permitted under applicable Indian law, the App and its administrators shall not be liable for:</p>
-    <ul class="policy-list">
-      <li>Any direct or indirect loss arising from your use of, or inability to use, the App.</li>
-      <li>Any disputes, disagreements, or harm arising from matrimonial connections made through the platform.</li>
-      <li>Loss of data due to technical failure, provided reasonable precautions were in place.</li>
-      <li>Actions taken by other users of the App.</li>
-    </ul>
+  <section id="s6">
+    <h2>6. Matrimonial Platform Rules <span class="hi">वैवाहिक मंच नियम</span></h2>
+    <div class="lang-block">
+      <span class="lang-tag">English</span>
+      <p>The matrimonial section of the App is a community-moderated platform for families to find matches within the Akhil Bhartiye Kasaudhan Vaishya Mahasabha. By using this feature, you agree to:</p>
+      <ul class="policy-list">
+        <li>Create profiles only for yourself or your immediate family members, with their full consent.</li>
+        <li>Use the platform solely for the purpose of finding a life partner within the Kasaudhan community — not for casual contact, friendship, or any other purpose.</li>
+        <li>Communicate with other families respectfully and in good faith at all times.</li>
+        <li>Not share another member's contact details, photographs, or profile information outside the App without their explicit permission.</li>
+        <li>Not upload photographs of any person other than the profile holder.</li>
+        <li>Not make any payment demands, financial requests, or engage in any commercial activity through the matrimonial feature.</li>
+        <li>Report any suspicious, fraudulent, or inappropriate profiles to the App administrators immediately.</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Disclaimer:</strong> The App facilitates introductions only. We do not verify all claims made in matrimonial profiles. Families are advised to independently verify information before proceeding with any alliance. The App and its administrators are not responsible for the outcome of any matrimonial connection made through the platform.
+      </div>
+    </div>
+    <div class="lang-block hi">
+      <span class="lang-tag hi-tag">हिन्दी</span>
+      <p class="hi">ऐप का वैवाहिक अनुभाग अखिल भारतीय कासौधन वैश्य महासभा के भीतर परिवारों को वर-वधू खोजने के लिए एक समुदाय-नियंत्रित मंच है। इस सुविधा का उपयोग करके, आप सहमत होते हैं कि आप:</p>
+      <ul class="policy-list hi">
+        <li>केवल स्वयं के लिए या अपने निकटतम परिवार के सदस्यों के लिए, उनकी पूर्ण सहमति से प्रोफ़ाइल बनाएँगे।</li>
+        <li>इस मंच का उपयोग केवल कासौधन समुदाय के भीतर जीवनसाथी खोजने के उद्देश्य से करेंगे — आकस्मिक संपर्क, मित्रता या किसी अन्य उद्देश्य के लिए नहीं।</li>
+        <li>अन्य परिवारों के साथ हमेशा सम्मानपूर्वक और सद्भावना से संवाद करेंगे।</li>
+        <li>बिना स्पष्ट अनुमति के किसी अन्य सदस्य का संपर्क विवरण, तस्वीरें, या प्रोफ़ाइल जानकारी ऐप के बाहर साझा नहीं करेंगे।</li>
+        <li>प्रोफ़ाइल धारक के अलावा किसी अन्य व्यक्ति की तस्वीरें अपलोड नहीं करेंगे।</li>
+        <li>वैवाहिक सुविधा के माध्यम से कोई भुगतान मांग, वित्तीय अनुरोध, या व्यावसायिक गतिविधि नहीं करेंगे।</li>
+        <li>किसी भी संदिग्ध, धोखाधड़ीपूर्ण, या अनुचित प्रोफ़ाइल की सूचना तुरंत ऐप प्रशासकों को देंगे।</li>
+      </ul>
+      <div class="highlight-box">
+        <p class="hi"><strong>अस्वीकरण:</strong> ऐप केवल परिचय की सुविधा प्रदान करता है। हम वैवाहिक प्रोफ़ाइलों में किए गए सभी दावों को सत्यापित नहीं करते। परिवारों को सलाह दी जाती है कि किसी भी रिश्ते को आगे बढ़ाने से पहले वे स्वतंत्र रूप से जानकारी सत्यापित करें। ऐप और उसके प्रशासक इस मंच के माध्यम से बने किसी भी वैवाहिक संबंध के परिणाम के लिए ज़िम्मेदार नहीं हैं।</p>
+      </div>
+    </div>
   </section>
 
-  <!-- 12 -->
-  <section>
-    <h2>12. Account Suspension &amp; Termination</h2>
-    <p>We reserve the right to suspend or permanently delete any account that:</p>
-    <ul class="policy-list">
-      <li>Violates any of these Terms.</li>
-      <li>Is found to contain fraudulent or fabricated information.</li>
-      <li>Has been reported and confirmed as engaging in abusive or harmful behaviour.</li>
-      <li>Has been inactive for more than 24 consecutive months.</li>
-    </ul>
-    <p>You may also delete your own account at any time through the App settings. Upon deletion, your personal data will be removed within 30 days as described in our Privacy Policy.</p>
+  <section id="s7">
+    <h2>7. Prohibited Conduct <span class="hi">निषिद्ध आचरण</span></h2>
+    <div class="lang-block">
+      <span class="lang-tag">English</span>
+      <p>The following actions are strictly prohibited on the App:</p>
+      <ul class="policy-list">
+        <li>Posting false, misleading, or fabricated information in any section of the App.</li>
+        <li>Harassing, threatening, or abusing other community members in any form.</li>
+        <li>Using the App for any commercial purpose, solicitation, advertising, or business promotion.</li>
+        <li>Collecting or harvesting personal data of other users for any purpose outside the App.</li>
+        <li>Attempting to hack, disrupt, or reverse-engineer the App or its systems.</li>
+        <li>Uploading obscene, offensive, or inappropriate content including photographs.</li>
+        <li>Impersonating any other person, family, or community official.</li>
+        <li>Using the App in any way that violates applicable laws of India.</li>
+      </ul>
+      <div class="warning-box">
+        <strong>Violation of these rules</strong> may result in immediate account suspension, permanent ban from the App, and, in serious cases, reporting to appropriate legal authorities.
+      </div>
+    </div>
+    <div class="lang-block hi">
+      <span class="lang-tag hi-tag">हिन्दी</span>
+      <p class="hi">ऐप पर निम्नलिखित कार्य सख्त वर्जित हैं:</p>
+      <ul class="policy-list hi">
+        <li>ऐप के किसी भी अनुभाग में झूठी, भ्रामक, या मनगढ़ंत जानकारी पोस्ट करना।</li>
+        <li>अन्य समुदाय के सदस्यों को किसी भी रूप में परेशान करना, धमकाना, या दुर्व्यवहार करना।</li>
+        <li>ऐप का उपयोग किसी भी व्यावसायिक उद्देश्य, याचना, विज्ञापन, या व्यावसायिक प्रचार के लिए करना।</li>
+        <li>ऐप के बाहर किसी भी उद्देश्य के लिए अन्य उपयोगकर्ताओं का व्यक्तिगत डेटा एकत्र करना।</li>
+        <li>ऐप या उसकी प्रणालियों को हैक करने, बाधित करने, या रिवर्स-इंजीनियर करने का प्रयास करना।</li>
+        <li>अश्लील, आपत्तिजनक, या अनुचित सामग्री सहित तस्वीरें अपलोड करना।</li>
+        <li>किसी अन्य व्यक्ति, परिवार, या सामुदायिक अधिकारी का रूप धारण करना।</li>
+        <li>भारत के लागू कानूनों का उल्लंघन करने वाले किसी भी तरीके से ऐप का उपयोग करना।</li>
+      </ul>
+      <div class="warning-box">
+        <p class="hi"><strong>इन नियमों के उल्लंघन</strong> के परिणामस्वरूप तत्काल खाता निलंबन, ऐप से स्थायी प्रतिबंध, और गंभीर मामलों में उपयुक्त कानूनी प्राधिकारियों को सूचना दी जा सकती है।</p>
+      </div>
+    </div>
   </section>
 
-  <!-- 13 -->
-  <section>
-    <h2>13. Changes to These Terms</h2>
-    <p>We may update these Terms from time to time to reflect changes in the App's features, community guidelines, or legal requirements. When changes are made:</p>
-    <ul class="policy-list">
-      <li>The "Last Updated" date at the top of this page will be revised.</li>
-      <li>Significant changes will be notified through the App.</li>
-      <li>Continued use of the App after the effective date of the new Terms constitutes your acceptance.</li>
-    </ul>
+  <section id="child-safety">
+    <h2>8. Child Safety Standards <span class="hi">बाल सुरक्षा मानक</span></h2>
+    <div class="lang-block">
+      <span class="lang-tag">English</span>
+      <p>Akhil Bhartiye Kasaudhan Vaishya Mahasabha App ("Kasaudhan") strictly prohibits Child Sexual Abuse and Exploitation (CSAE) in any form. We do not permit any content, behaviour, or communication on our platform that sexually exploits, abuses, endangers, or grooms a child. This includes, but is not limited to, child sexual abuse material (CSAM), solicitation of minors, and any attempt to exploit or endanger a child through this App.</p>
+      <p>We take immediate action — including removal of content and suspension or termination of user accounts — upon obtaining actual knowledge of any violation of this policy. Confirmed instances of CSAM will be reported to the appropriate law enforcement authorities in India, including local police / cybercrime cells, and where applicable, to international child safety organisations.</p>
+      <div class="warning-box">
+        <strong>Report a concern:</strong> Users can report any concern regarding child safety directly within the App via the "Help &amp; Support" / "Report" option, or by emailing our designated Child Safety point of contact at <a href="mailto:abkvmkasaudhan@gmail.com">abkvmkasaudhan@gmail.com</a>.
+      </div>
+    </div>
+    <div class="lang-block hi">
+      <span class="lang-tag hi-tag">हिन्दी</span>
+      <p class="hi">अखिल भारतीय कासौधन वैश्य महासभा ऐप ("Kasaudhan") किसी भी रूप में बाल यौन शोषण एवं उत्पीड़न (CSAE) को पूर्णतः प्रतिबंधित करता है। हमारे प्लेटफ़ॉर्म पर ऐसी कोई भी सामग्री, व्यवहार या संचार स्वीकार्य नहीं है जो किसी बालक/बालिका का यौन शोषण करे, उसे नुकसान पहुँचाए, या उसे बहलाकर-फुसलाकर गुमराह करे। इसमें बाल यौन शोषण सामग्री (CSAM), नाबालिगों को लुभाने का प्रयास, तथा किसी भी प्रकार से बच्चों को खतरे में डालने वाली गतिविधियाँ शामिल हैं।</p>
+      <p class="hi">इस नीति के किसी भी उल्लंघन की जानकारी मिलते ही हम तत्काल कार्रवाई करेंगे — जिसमें सामग्री को हटाना तथा संबंधित उपयोगकर्ता के खाते को निलंबित या समाप्त करना शामिल है। CSAM के पुष्ट मामलों की सूचना भारत के संबंधित कानून प्रवर्तन प्राधिकरणों (स्थानीय पुलिस / साइबर क्राइम सेल) को दी जाएगी, तथा जहाँ लागू हो, अंतरराष्ट्रीय बाल सुरक्षा संगठनों को भी सूचित किया जाएगा।</p>
+      <div class="warning-box">
+        <p class="hi"><strong>शिकायत दर्ज करें:</strong> उपयोगकर्ता ऐप के भीतर "Help &amp; Support" / "Report" विकल्प के माध्यम से, या हमारे नामित बाल सुरक्षा संपर्क को <a href="mailto:abkvmkasaudhan@gmail.com">abkvmkasaudhan@gmail.com</a> पर ईमेल करके, बाल सुरक्षा संबंधी किसी भी चिंता की रिपोर्ट कर सकते हैं।</p>
+      </div>
+    </div>
   </section>
 
-  <!-- 14 -->
-  <section>
-    <h2>14. Governing Law &amp; Disputes</h2>
-    <p>These Terms shall be governed by and construed in accordance with the <strong>laws of India</strong>. Any disputes arising out of or in connection with the use of the App shall first be attempted to be resolved amicably through community mediation.</p>
-    <p>If a dispute cannot be resolved amicably within 30 days, it shall be subject to the jurisdiction of the courts of <strong>Delhi, India</strong>.</p>
+  <section id="s9">
+    <h2>9. Content You Submit <span class="hi">आपके द्वारा प्रस्तुत सामग्री</span></h2>
+    <div class="lang-block">
+      <span class="lang-tag">English</span>
+      <p>By submitting any content to the App (profile information, photographs, messages), you confirm that:</p>
+      <ul class="policy-list">
+        <li>The content is accurate and belongs to you or you have the right to share it.</li>
+        <li>The content does not violate any third-party rights, including copyright or privacy rights.</li>
+        <li>You grant the App a limited, non-exclusive right to display your content to other verified members for the purposes stated in these Terms.</li>
+        <li>You can request removal of your content at any time by deleting your account or contacting us.</li>
+      </ul>
+    </div>
+    <div class="lang-block hi">
+      <span class="lang-tag hi-tag">हिन्दी</span>
+      <p class="hi">ऐप पर कोई भी सामग्री (प्रोफ़ाइल जानकारी, तस्वीरें, संदेश) प्रस्तुत करके, आप पुष्टि करते हैं कि:</p>
+      <ul class="policy-list hi">
+        <li>सामग्री सटीक है और आपकी है, या आपके पास इसे साझा करने का अधिकार है।</li>
+        <li>सामग्री किसी तीसरे पक्ष के अधिकारों का उल्लंघन नहीं करती, जिसमें कॉपीराइट या गोपनीयता अधिकार शामिल हैं।</li>
+        <li>आप ऐप को इन शर्तों में बताए गए उद्देश्यों के लिए अन्य सत्यापित सदस्यों को अपनी सामग्री प्रदर्शित करने का एक सीमित, गैर-अनन्य अधिकार प्रदान करते हैं।</li>
+        <li>आप अपना खाता हटाकर या हमसे संपर्क करके किसी भी समय अपनी सामग्री हटाने का अनुरोध कर सकते हैं।</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- 15 -->
-  <section>
-    <h2>15. Contact Us</h2>
-    <p>For any questions, concerns, or grievances regarding these Terms, please reach out to us:</p>
+  <section id="s10">
+    <h2>10. Intellectual Property <span class="hi">बौद्धिक संपदा</span></h2>
+    <div class="lang-block">
+      <span class="lang-tag">English</span>
+      <p>All content, design, branding, logos, and software of the App are the property of Akhil Bhartiye Kasaudhan Vaishya Mahasabha and its developers. You may not:</p>
+      <ul class="policy-list">
+        <li>Copy, reproduce, or distribute any part of the App without written permission.</li>
+        <li>Use the App's name, logo, or branding for any commercial or personal purpose outside the App.</li>
+        <li>Develop derivative products or services based on the App's data or functionality.</li>
+      </ul>
+    </div>
+    <div class="lang-block hi">
+      <span class="lang-tag hi-tag">हिन्दी</span>
+      <p class="hi">ऐप की सभी सामग्री, डिज़ाइन, ब्रांडिंग, लोगो, और सॉफ़्टवेयर अखिल भारतीय कासौधन वैश्य महासभा और उसके डेवलपर्स की संपत्ति हैं। आप निम्न कार्य नहीं कर सकते:</p>
+      <ul class="policy-list hi">
+        <li>लिखित अनुमति के बिना ऐप के किसी भी हिस्से की प्रतिलिपि बनाना, पुनरुत्पादन करना, या वितरित करना।</li>
+        <li>ऐप के बाहर किसी व्यावसायिक या व्यक्तिगत उद्देश्य के लिए ऐप के नाम, लोगो, या ब्रांडिंग का उपयोग करना।</li>
+        <li>ऐप के डेटा या कार्यक्षमता के आधार पर व्युत्पन्न उत्पाद या सेवाएँ विकसित करना।</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="s11">
+    <h2>11. Disclaimer of Warranties <span class="hi">वारंटी अस्वीकरण</span></h2>
+    <div class="lang-block">
+      <span class="lang-tag">English</span>
+      <p>The App is provided <strong>"as is"</strong> and <strong>"as available"</strong> without any warranties of any kind, either express or implied. We do not guarantee:</p>
+      <ul class="policy-list">
+        <li>That the App will be available at all times without interruption or errors.</li>
+        <li>That all information submitted by users is accurate or verified.</li>
+        <li>That use of the matrimonial platform will result in a successful alliance.</li>
+        <li>That the App is free from bugs, viruses, or security vulnerabilities at all times.</li>
+      </ul>
+      <p>We will make reasonable efforts to maintain the App and correct issues promptly, but accept no liability for disruption beyond our control.</p>
+    </div>
+    <div class="lang-block hi">
+      <span class="lang-tag hi-tag">हिन्दी</span>
+      <p class="hi">ऐप को <strong>"जैसा है"</strong> और <strong>"जैसा उपलब्ध है"</strong> के आधार पर, बिना किसी स्पष्ट या निहित वारंटी के प्रदान किया जाता है। हम यह गारंटी नहीं देते कि:</p>
+      <ul class="policy-list hi">
+        <li>ऐप हर समय बिना किसी रुकावट या त्रुटि के उपलब्ध रहेगा।</li>
+        <li>उपयोगकर्ताओं द्वारा प्रस्तुत सभी जानकारी सटीक या सत्यापित है।</li>
+        <li>वैवाहिक मंच का उपयोग सफल रिश्ते में परिणत होगा।</li>
+        <li>ऐप हर समय बग, वायरस, या सुरक्षा कमजोरियों से मुक्त है।</li>
+      </ul>
+      <p class="hi">हम ऐप को बनाए रखने और समस्याओं को तुरंत सुधारने के लिए उचित प्रयास करेंगे, लेकिन हमारे नियंत्रण से बाहर की रुकावटों के लिए कोई ज़िम्मेदारी स्वीकार नहीं करते।</p>
+    </div>
+  </section>
+
+  <section id="s12">
+    <h2>12. Limitation of Liability <span class="hi">दायित्व की सीमा</span></h2>
+    <div class="lang-block">
+      <span class="lang-tag">English</span>
+      <p>To the maximum extent permitted under applicable Indian law, the App and its administrators shall not be liable for:</p>
+      <ul class="policy-list">
+        <li>Any direct or indirect loss arising from your use of, or inability to use, the App.</li>
+        <li>Any disputes, disagreements, or harm arising from matrimonial connections made through the platform.</li>
+        <li>Loss of data due to technical failure, provided reasonable precautions were in place.</li>
+        <li>Actions taken by other users of the App.</li>
+      </ul>
+    </div>
+    <div class="lang-block hi">
+      <span class="lang-tag hi-tag">हिन्दी</span>
+      <p class="hi">लागू भारतीय कानून के तहत अनुमत अधिकतम सीमा तक, ऐप और उसके प्रशासक निम्न के लिए उत्तरदायी नहीं होंगे:</p>
+      <ul class="policy-list hi">
+        <li>ऐप के उपयोग या उपयोग करने में असमर्थता से उत्पन्न कोई भी प्रत्यक्ष या अप्रत्यक्ष हानि।</li>
+        <li>मंच के माध्यम से बने वैवाहिक संबंधों से उत्पन्न कोई भी विवाद, मतभेद, या नुकसान।</li>
+        <li>तकनीकी विफलता के कारण डेटा की हानि, बशर्ते उचित सावधानियाँ बरती गई हों।</li>
+        <li>ऐप के अन्य उपयोगकर्ताओं द्वारा की गई कार्रवाइयाँ।</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="s13">
+    <h2>13. Account Suspension &amp; Termination <span class="hi">खाता निलंबन एवं समाप्ति</span></h2>
+    <div class="lang-block">
+      <span class="lang-tag">English</span>
+      <p>We reserve the right to suspend or permanently delete any account that:</p>
+      <ul class="policy-list">
+        <li>Violates any of these Terms.</li>
+        <li>Is found to contain fraudulent or fabricated information.</li>
+        <li>Has been reported and confirmed as engaging in abusive or harmful behaviour.</li>
+        <li>Has been inactive for more than 24 consecutive months.</li>
+      </ul>
+      <p>You may also delete your own account at any time through the App settings. Upon deletion, your personal data will be removed within 30 days as described in our Privacy Policy.</p>
+    </div>
+    <div class="lang-block hi">
+      <span class="lang-tag hi-tag">हिन्दी</span>
+      <p class="hi">हम किसी भी ऐसे खाते को निलंबित करने या स्थायी रूप से हटाने का अधिकार सुरक्षित रखते हैं जो:</p>
+      <ul class="policy-list hi">
+        <li>इन शर्तों में से किसी का उल्लंघन करता हो।</li>
+        <li>धोखाधड़ीपूर्ण या मनगढ़ंत जानकारी वाला पाया जाता हो।</li>
+        <li>दुर्व्यवहार या हानिकारक व्यवहार में लिप्त पाए जाने की पुष्टि हुई हो।</li>
+        <li>लगातार 24 महीनों से अधिक समय से निष्क्रिय हो।</li>
+      </ul>
+      <p class="hi">आप ऐप सेटिंग्स के माध्यम से किसी भी समय अपना खाता स्वयं भी हटा सकते हैं। हटाने पर, आपका व्यक्तिगत डेटा हमारी गोपनीयता नीति में वर्णित अनुसार 30 दिनों के भीतर हटा दिया जाएगा।</p>
+    </div>
+  </section>
+
+  <section id="s14">
+    <h2>14. Changes to These Terms <span class="hi">इन शर्तों में परिवर्तन</span></h2>
+    <div class="lang-block">
+      <span class="lang-tag">English</span>
+      <p>We may update these Terms from time to time to reflect changes in the App's features, community guidelines, or legal requirements. When changes are made:</p>
+      <ul class="policy-list">
+        <li>The "Last Updated" date at the top of this page will be revised.</li>
+        <li>Significant changes will be notified through the App.</li>
+        <li>Continued use of the App after the effective date of the new Terms constitutes your acceptance.</li>
+      </ul>
+    </div>
+    <div class="lang-block hi">
+      <span class="lang-tag hi-tag">हिन्दी</span>
+      <p class="hi">हम ऐप की विशेषताओं, सामुदायिक दिशानिर्देशों, या कानूनी आवश्यकताओं में परिवर्तन को दर्शाने के लिए समय-समय पर इन शर्तों को अपडेट कर सकते हैं। परिवर्तन किए जाने पर:</p>
+      <ul class="policy-list hi">
+        <li>इस पृष्ठ के शीर्ष पर "अंतिम अद्यतन" तिथि संशोधित की जाएगी।</li>
+        <li>महत्वपूर्ण परिवर्तनों की सूचना ऐप के माध्यम से दी जाएगी।</li>
+        <li>नई शर्तों की प्रभावी तिथि के बाद ऐप का निरंतर उपयोग आपकी स्वीकृति माना जाएगा।</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="s15">
+    <h2>15. Governing Law &amp; Disputes <span class="hi">शासी कानून एवं विवाद</span></h2>
+    <div class="lang-block">
+      <span class="lang-tag">English</span>
+      <p>These Terms shall be governed by and construed in accordance with the <strong>laws of India</strong>. Any disputes arising out of or in connection with the use of the App shall first be attempted to be resolved amicably through community mediation.</p>
+      <p>If a dispute cannot be resolved amicably within 30 days, it shall be subject to the jurisdiction of the courts of <strong>Delhi, India</strong>.</p>
+    </div>
+    <div class="lang-block hi">
+      <span class="lang-tag hi-tag">हिन्दी</span>
+      <p class="hi">ये शर्तें <strong>भारत के कानूनों</strong> द्वारा शासित और उनके अनुसार व्याख्यायित होंगी। ऐप के उपयोग से उत्पन्न या उससे संबंधित किसी भी विवाद को पहले सामुदायिक मध्यस्थता के माध्यम से सौहार्दपूर्ण ढंग से हल करने का प्रयास किया जाएगा।</p>
+      <p class="hi">यदि कोई विवाद 30 दिनों के भीतर सौहार्दपूर्ण ढंग से हल नहीं होता है, तो यह <strong>दिल्ली, भारत</strong> के न्यायालयों के क्षेत्राधिकार के अधीन होगा।</p>
+    </div>
+  </section>
+
+  <section id="s16">
+    <h2>16. Contact Us <span class="hi">हमसे संपर्क करें</span></h2>
+    <div class="lang-block">
+      <span class="lang-tag">English</span>
+      <p>For any questions, concerns, or grievances regarding these Terms — including child safety concerns — please reach out to us:</p>
+    </div>
+    <div class="lang-block hi">
+      <span class="lang-tag hi-tag">हिन्दी</span>
+      <p class="hi">इन शर्तों से संबंधित किसी भी प्रश्न, चिंता, या शिकायत के लिए — जिसमें बाल सुरक्षा संबंधी चिंताएँ भी शामिल हैं — कृपया हमसे संपर्क करें:</p>
+    </div>
     <div class="contact-card">
-      <h3>Akhil Bhartiye Kasaudhan Vaishya Mahasabha — Support</h3>
-      <p>📧 Email: <a href="mailto:abkvmkasaudhan@gmail.com">abkvmkasaudhan@gmail.com</a></p>
-      <p>📱 App: Use the "Help &amp; Support" section within the App</p>
-      <p style="margin-top:14px; font-size:13px; color:rgba(255,255,255,0.6);">We aim to respond to all queries within 7 working days.</p>
+      <h3>Akhil Bhartiye Kasaudhan Vaishya Mahasabha — Support <span class="hi">सहायता</span></h3>
+      <p>📧 Email <span class="hi">/ ईमेल</span>: <a href="mailto:abkvmkasaudhan@gmail.com">abkvmkasaudhan@gmail.com</a></p>
+      <p>📱 App <span class="hi">/ ऐप</span>: Use the "Help &amp; Support" section within the App <span class="hi">/ ऐप के भीतर "सहायता एवं समर्थन" अनुभाग का उपयोग करें</span></p>
+      <p style="margin-top:14px; font-size:13px; color:rgba(255,255,255,0.6);">We aim to respond to all queries within 7 working days.<br><span class="hi">हम सभी प्रश्नों का उत्तर 7 कार्य दिवसों के भीतर देने का प्रयास करते हैं।</span></p>
     </div>
   </section>
 
@@ -473,6 +795,8 @@
 <footer>
   <p>© 2025 <strong>Akhil Bhartiye Kasaudhan Vaishya Mahasabha</strong> — All rights reserved.</p>
   <p style="margin-top:6px;">These Terms &amp; Conditions apply to the Android app published on Google Play Store.</p>
+  <p class="hi">© 2025 <strong>अखिल भारतीय कासौधन वैश्य महासभा</strong> — सर्वाधिकार सुरक्षित।</p>
+  <p class="hi">ये नियम एवं शर्तें Google Play Store पर प्रकाशित Android ऐप पर लागू होती हैं।</p>
 </footer>
 
 </body>
